@@ -6,6 +6,9 @@
 <picture>
     <img src="https://github.com/lmittmann/tint/assets/3458786/3d42f8d5-8bdf-40db-a16a-1939c88689cb">
 </picture>
+
+![image](https://github.com/user-attachments/assets/ad3855ea-ab17-4109-b027-3f0fbb67e0a2)
+
 <br>
 <br>
 
