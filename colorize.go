@@ -29,7 +29,7 @@ var (
 		"w": "47", "W": "107",
 	}
 
-	re      = regexp.MustCompile(`@[kKrRgGyYbBmMcCwW*]!?[kKrRgGyYbBmMcCwW]?{.*?}`)
+	re      = regexp.MustCompile(`(?s)@[kKrRgGyYbBmMcCwW*]!?[kKrRgGyYbBmMcCwW]?{.*?}`)
 	reStrip = regexp.MustCompile(`\033\[\d+(;\d+)*m`)
 )
 
