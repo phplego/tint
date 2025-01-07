@@ -38,6 +38,12 @@ slog.SetDefault(slog.New(
         TimeFormat: time.Kitchen,
     }),
 ))
+
+// use color expressions
+slog.Info("Message with @r{red color}")
+slog.Info("Message with @R{bright red color}")
+slog.Info("Message with @r!{red bold color}")
+slog.Info("Message with @rW{red on white backgound}")
 ```
 
 ### Customize Attributes
