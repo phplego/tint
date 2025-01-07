@@ -128,7 +128,7 @@ type Options struct {
 // using the default options. If opts is nil, the default options are used.
 func NewHandler(w io.Writer, opts *Options) slog.Handler {
 	h := &handler{
-		w:          w,
+		w:          ColorizeWriter{out: w},
 		level:      defaultLevel,
 		timeFormat: defaultTimeFormat,
 	}
@@ -145,6 +145,10 @@ func NewHandler(w io.Writer, opts *Options) slog.Handler {
 		h.timeFormat = opts.TimeFormat
 	}
 	h.noColor = opts.NoColor
+
+	if h.noColor {
+		h.w = w
+	}
 	return h
 }
 

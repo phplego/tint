@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"errors"
+	"fmt"
 	"io"
 	"log/slog"
 	"os"
@@ -13,7 +14,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/lmittmann/tint"
+	"github.com/phplego/tint"
 )
 
 var faketime = time.Date(2009, time.November, 10, 23, 0, 0, 0, time.UTC)
@@ -28,6 +29,48 @@ func Example() {
 	slog.Debug("Connected to DB", "db", "myapp", "host", "localhost:5432")
 	slog.Warn("Slow request", "method", "GET", "path", "/users", "duration", 497*time.Millisecond)
 	slog.Error("DB connection lost", tint.Err(errors.New("connection reset")), "db", "myapp")
+
+	slog.Info("Wow @W!r{ spam detected! } @g{please} @b!C{ do } something @*{awesome} link: @kG{ https://example.com }")
+	// Output:
+}
+
+func ExampleColorize() {
+	colorsArr := []string{
+		"k", "r", "g", "y", "b", "m", "c", "w",
+		"K", "R", "G", "Y", "B", "M", "C", "W",
+	}
+
+	names := []string{
+		"black", "red", "green", "yellow", "blue", "magenta", "cyan", "white",
+		"bright black", "bright red", "bright green", "bright yellow", "bright blue", "bright magenta", "bright cyan", "bright white",
+	}
+
+	println()
+	println("Normal text:", strings.Repeat(" ", 22), "Bold text:")
+	for i, k := range colorsArr {
+		print(tint.Colorize(
+			fmt.Sprintf("  %s - @%s{%-30s}", k, k, names[i]),
+		))
+		print(tint.Colorize(
+			fmt.Sprintf("  %s! - @%s!{%s} \n", k, k, names[i]),
+		))
+	}
+
+	// background colors
+	println("\nWith background:")
+	for _, b := range colorsArr {
+		for _, k := range colorsArr {
+			print(tint.Colorize(
+				fmt.Sprintf("@%s!%s{ %s!%s } ", k, b, k, b),
+			))
+		}
+		println()
+	}
+
+	// rainbow
+	println()
+	println(tint.Colorize("* - @*{Rainbow text where each letter has a different color}"))
+	println()
 	// Output:
 }
 
