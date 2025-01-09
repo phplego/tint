@@ -66,7 +66,8 @@ func applyColor(text string, format string) string {
 func applyRainbow(text string) string {
 	rainbow := "RYGCBM"
 	result := strings.Builder{}
-	for i, c := range text {
+	var i int
+	for _, c := range text {
 		if c == ' ' {
 			result.WriteRune(c)
 			continue
@@ -74,6 +75,7 @@ func applyRainbow(text string) string {
 		pos := i % len(rainbow)
 		color := colors[rainbow[pos:pos+1]]
 		result.WriteString("\033[01;" + color + "m" + string(c) + "\033[00m")
+		i++
 	}
 	return result.String()
 }
