@@ -42,6 +42,7 @@ slog.Info("Example of @R{bright red color}")
 slog.Info("Example of @r!{red bold color}")
 slog.Info("Example of @rW{red on white backgound}")
 slog.Info("Example of @r!W{red bold on white backgound}")
+slog.Info("Example of @*{Rainbow text}")
 ```
 
 ### Customize Attributes
