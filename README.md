@@ -37,10 +37,11 @@ slog.SetDefault(slog.New(
 ))
 
 // use color expressions
-slog.Info("Message with @r{red color}")
-slog.Info("Message with @R{bright red color}")
-slog.Info("Message with @r!{red bold color}")
-slog.Info("Message with @rW{red on white backgound}")
+slog.Info("Example of @r{red color}")
+slog.Info("Example of @R{bright red color}")
+slog.Info("Example of @r!{red bold color}")
+slog.Info("Example of @rW{red on white backgound}")
+slog.Info("Example of @r!W{red bold on white backgound}")
 ```
 
 ### Customize Attributes
