@@ -36,13 +36,6 @@ slog.SetDefault(slog.New(
     }),
 ))
 
-// use color expressions
-slog.Info("Example of @r{red color}")
-slog.Info("Example of @R{bright red color}")
-slog.Info("Example of @r!{red bold color}")
-slog.Info("Example of @rW{red on white backgound}")
-slog.Info("Example of @r!W{red bold on white backgound}")
-slog.Info("Example of @*{Rainbow text}")
 ```
 
 ### Customize Attributes
@@ -82,6 +75,44 @@ logger := slog.New(
     }),
 )
 ```
+
+### Color Expressions
+Color expression is a string that starts with `@` followed by a color/background/boldness code and ends with `{some text}`.
+The format is `@<color><bold><background>{text}` for example `@r!W{red bold on white background}`.
+First symbol after `@` is a color code, second symbol is an optional boldness flag (exclamation mark) and third symbol is an optional background color code.
+
+```go
+// usage of color expressions
+slog.Info("Example of @r{red color}")
+slog.Info("Example of @R{bright red color}")
+slog.Info("Example of @r!{red bold color}")
+slog.Info("Example of @rW{red on white backgound}")
+slog.Info("Example of @r!W{red bold on white backgound}")
+slog.Info("Example of @*{Rainbow text}")
+```
+
+Supported color codes are:
+
+- `k` - Black
+- `r` - Red
+- `g` - Green
+- `y` - Yellow
+- `b` - Blue
+- `m` - Magenta
+- `c` - Cyan
+- `w` - White
+- `K` - Bright Black (Gray)
+- `R` - Bright Red
+- `G` - Bright Green
+- `Y` - Bright Yellow
+- `B` - Bright Blue
+- `M` - Bright Magenta
+- `C` - Bright Cyan
+- `W` - Bright White
+- `*` - Rainbow. Special color where each character has a different color.
+
+
+
 
 ### Automatically Enable Colors
 
