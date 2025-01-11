@@ -9,6 +9,13 @@
 <br>
 <br>
 
+### About this fork
+
+This package is a fork of the original [lmittmann/tint](https://github.com/lmittmann/tint) package.
+This fork adds support for color expressions in log messages.
+
+### Overview
+
 Package `tint` implements a zero-dependency [`slog.Handler`](https://pkg.go.dev/log/slog#Handler)
 that writes tinted (colorized) logs. Its output format is inspired by the `zerolog.ConsoleWriter` and
 [`slog.TextHandler`](https://pkg.go.dev/log/slog#TextHandler).
@@ -37,10 +44,6 @@ slog.SetDefault(slog.New(
 ))
 
 ```
-
-### About this fork
-This package is a fork of the original [lmittmann/tint](https://github.com/lmittmann/tint) package. 
-This fork adds support for color expressions in log messages.
 
 ### Customize Attributes
 
