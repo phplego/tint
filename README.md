@@ -38,6 +38,10 @@ slog.SetDefault(slog.New(
 
 ```
 
+### About this fork
+This package is a fork of the original [lmittmann/tint](https://github.com/lmittmann/tint) package. 
+This fork adds support for color expressions in log messages.
+
 ### Customize Attributes
 
 `ReplaceAttr` can be used to alter or drop attributes. If set, it is called on
