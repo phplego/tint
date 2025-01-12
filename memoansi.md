@@ -21,7 +21,6 @@ A MemoANSI Expression begins with the `@` symbol, followed by a sequence of code
 graph LR
     Start["@"] --> |"Normal Colors"| Normal["k,r,g,y,b,m,c,w"]
     Start --> |"Bright Colors"| Bright["K,R,G,Y,B,M,C,W"]
-    Start --> |"Rainbow"| Rainbow["symbol *"]
     
     Normal --> |"Bold"| Bold["!"]
     Bright --> |"Bold"| Bold
@@ -29,11 +28,9 @@ graph LR
     Bright --> |"Skip Bold"| BG
     
     Bold --> |"Background"| BG["k,r,g,y,b,m,c,w<br/>K,R,G,Y,B,M,C,W"]
-    Bold --> |"Skip Background"| Text
+    Bold --> |"No Background"| Text
     BG --> Text["{text}"]
     BG --> Text
-    
-    Rainbow --> Text
 ```
 
 
@@ -57,6 +54,7 @@ graph LR
 | m    | Magenta          | M                   | Bright Magenta       |
 | c    | Cyan             | C                   | Bright Cyan          |
 | w    | White            | W                   | Bright White         |
+
 
 ### Background Colors
 The same codes used for foreground colors can also be used for background colors when placed after the boldness flag (if any).
