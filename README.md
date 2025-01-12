@@ -12,7 +12,7 @@
 ### About this fork
 
 This package is a fork of the original [lmittmann/tint](https://github.com/lmittmann/tint) package.
-This fork adds support for color expressions in log messages.
+This fork adds support for color expressions (in [MemoANSI format](memoansi.md)) in log messages.
 
 ### Overview
 
@@ -100,25 +100,20 @@ slog.Info("Example of @*{Rainbow text}")
 
 Supported color codes are:
 
-- `k` - Black
-- `r` - Red
-- `g` - Green
-- `y` - Yellow
-- `b` - Blue
-- `m` - Magenta
-- `c` - Cyan
-- `w` - White
-- `K` - Bright Black (Gray)
-- `R` - Bright Red
-- `G` - Bright Green
-- `Y` - Bright Yellow
-- `B` - Bright Blue
-- `M` - Bright Magenta
-- `C` - Bright Cyan
-- `W` - Bright White
+| Code | Color            | Bright Variant Code | Bright Color         |
+|------|------------------|---------------------|----------------------|
+| k    | Black            | K                   | Bright Black (Gray)  |
+| r    | Red              | R                   | Bright Red           |
+| g    | Green            | G                   | Bright Green         |
+| y    | Yellow           | Y                   | Bright Yellow        |
+| b    | Blue             | B                   | Bright Blue          |
+| m    | Magenta          | M                   | Bright Magenta       |
+| c    | Cyan             | C                   | Bright Cyan          |
+| w    | White            | W                   | Bright White         |
+
 - `*` - Rainbow. Special color where each character has a different color.
 
-
+See [MemoANSI format](memoansi.md) for more details.
 
 
 ### Automatically Enable Colors
