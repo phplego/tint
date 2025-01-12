@@ -9,11 +9,33 @@ A MemoANSI Expression begins with the `@` symbol, followed by a sequence of code
 ```
 @<color><bold><background>{text}
 ```
+
 ### Components
-1. **Color Code**: The first character after `@` specifies the foreground color of the text.
-2. **Boldness Flag** (optional): An exclamation mark (`!`) after the color code makes the text bold.
-3. **Background Color Code** (optional): The next character specifies the background color of the text.
-4. **Text**: Enclosed within `{}` brackets, this is the content to be styled.
+1. **Start** The color expression must start with `@`
+2. **Color Code**: The first character after `@` specifies the foreground color of the text.
+3. **Boldness Flag** (optional): An exclamation mark (`!`) after the color code makes the text bold.
+4. **Background Color Code** (optional): The next character specifies the background color of the text.
+5. **Text**: Enclosed within `{}` brackets, this is the content to be styled.
+
+```mermaid
+graph LR
+    Start["@"] --> |"Normal Colors"| Normal["k,r,g,y,b,m,c,w"]
+    Start --> |"Bright Colors"| Bright["K,R,G,Y,B,M,C,W"]
+    Start --> |"Rainbow"| Rainbow["symbol *"]
+    
+    Normal --> |"Bold"| Bold["!"]
+    Bright --> |"Bold"| Bold
+    Normal --> |"Skip Bold"| BG
+    Bright --> |"Skip Bold"| BG
+    
+    Bold --> |"Background"| BG["k,r,g,y,b,m,c,w<br/>K,R,G,Y,B,M,C,W"]
+    Bold --> |"Skip Background"| Text
+    BG --> Text["{text}"]
+    BG --> Text
+    
+    Rainbow --> Text
+```
+
 
 ### Examples
 - `@r{red color}`: Text in red.
